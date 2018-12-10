@@ -1,0 +1,167 @@
+<div class="card">
+  <div class="card-header">
+    Add New Ride
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="saveRide(ridesForm)"
+          #ridesForm="ngForm">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="sourceId">Source</label>
+        <div class="col-md-8">
+          <select class="form-control"
+                  id="sourceId"
+                  required
+                  [(ngModel)]="rideForm.startsFrom"
+                  name="startsFrom"
+                  #startsFromVar="ngModel"
+                  [ngClass]="{'is-invalid': (startsFromVar.touched || startsFromVar.dirty) && !startsFromVar.valid }">
+            <option value=''>From</option>
+            <option value="Sofia">Sofia</option>
+            <option value="Plovdiv">Plovdiv</option>
+            <option value="Hamburg">Hamburg</option>
+            <option value="Milano">Milano</option>
+            <option value="Paris">Paris</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Berlin">Berlin</option>
+          </select>
+          <span class="invalid-feedback">
+            <span *ngIf="startsFromVar.errors?.required">
+              Please select source.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="destinationId">Destination</label>
+        <div class="col-md-8">
+          <select class="form-control"
+                  id="destinationId"
+                  required
+                  [(ngModel)]="rideForm.endTo"
+                  name="endTo"
+                  #endToVar="ngModel"
+                  [ngClass]="{'is-invalid': (endToVar.touched || endToVar.dirty) && !endToVar.valid }">
+            <option value=''>To</option>
+            <option value="Sofia">Sofia</option>
+            <option value="Plovdiv">Plovdiv</option>
+            <option value="Hamburg">Hamburg</option>
+            <option value="Milano">Milano</option>
+            <option value="Paris">Paris</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Berlin">Berlin</option>
+          </select>
+          <span class="invalid-feedback">
+            <span *ngIf="endToVar.errors?.required">
+              Please select Destination.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="startDateId">Start Date
+        </label>
+        <div class="col-md-5">
+          <input class="form-control"
+                 id="startDateId"
+                 type="date"
+                 placeholder="Start Date (required)"
+                 required
+                 [(ngModel)]="rideForm.startDate"
+                 name="startDate"
+                 #startDateVar="ngModel"
+                 [ngClass]="{'is-invalid': (startDateVar.touched || startDateVar.dirty) && !startDateVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="startDateVar.errors?.required">
+              Please Enter start Date.
+            </span>
+          </span>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control"
+                 id="startTimeId"
+                 type="time"
+                 placeholder="Start Date (required)"
+                 required
+                 [(ngModel)]="rideForm.startTime"
+                 name="startTime"
+                 #startTimeVar="ngModel"
+                 [ngClass]="{'is-invalid': (startTimeVar.touched || startTimeVar.dirty) && !startTimeVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="startTimeVar.errors?.required">
+              Please Enter Time.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="seatsId">Seats</label>
+        <div class="col-md-8">
+          <select class="form-control"
+                  id="seatsId"
+                  required
+                  [(ngModel)]="rideForm.seats"
+                  name="seats"
+                  #seatsVar="ngModel"
+                  [ngClass]="{'is-invalid': (seatsVar.touched || seatsVar.dirty) && !seatsVar.valid }">
+            <option value=''>Number of seats</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <span class="invalid-feedback">
+            <span *ngIf="seatsVar.errors?.required">
+              Please select seats.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="rideById">Ride By</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="rideById"
+                 type="text"
+                 placeholder="Ride By (required)"
+                 required
+                 [(ngModel)]="rideForm.owner"
+                 name="owner"
+                 #ownerVar="ngModel"
+                 [ngClass]="{'is-invalid': (ownerVar.touched || ownerVar.dirty) && !ownerVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="ownerVar.errors?.required">
+              Please Enter Ride By
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  type="submit"
+                  style="width:80px"
+                  [title]="ridesForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!ridesForm.valid">
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<br>Dirty: {{ rideForm.dirty }}
+<br>Touched: {{ rideForm.touched }}
+<br>Valid: {{ rideForm.valid }}
+<br>Value: {{ ridesForm.value | json }}
