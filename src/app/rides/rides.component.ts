@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { RideService } from './rides.service'
 import { Ride } from './rides';
 
+/*
+* Author : Subramanyam Amara
+*/
 @Component({
   templateUrl: './rides.component.html',
   styleUrls: ['./rides.component.css']

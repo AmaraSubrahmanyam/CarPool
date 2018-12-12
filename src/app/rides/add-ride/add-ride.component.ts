@@ -4,6 +4,9 @@ import { Ride } from './../rides'
 import { Router } from '@angular/router';
 import { RideService } from './../rides.service'
 
+/*
+* Author: Nageswara Rao Pammi
+*/
 
 @Component({
   selector: 'app-add-ride',

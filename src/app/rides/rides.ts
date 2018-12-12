@@ -1,3 +1,6 @@
+/*
+* Author: Subramanyam Amara
+*/
 export class Ride {
     constructor(
         public id?: number,

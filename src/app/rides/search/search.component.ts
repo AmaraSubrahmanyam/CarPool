@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Ride } from '../rides';
 import { RideService } from '../rides.service';
 import { NgForm } from '@angular/forms';
-
+/*
+* Author: Venugopal Vadla
+*/
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',

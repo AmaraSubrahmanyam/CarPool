@@ -9,6 +9,9 @@ import { AddRideComponent } from './rides/add-ride/add-ride.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SearchComponent } from './rides/search/search.component';
+/*
+* Author: Subramanyam Amara
+*/
 @NgModule({
   declarations: [
     AppComponent,
