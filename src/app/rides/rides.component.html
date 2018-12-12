@@ -5,20 +5,34 @@
 
   <div class="card-body">
     <div class="table-responsive-xl">
-      <table class="table" *ngIf="rides?.length">
+      <table class="table"
+             *ngIf="rides?.length">
+        <thead>
+          <tr>
+            <th>From </th>
+            <th>To</th>
+            <th>Ride By</th>
+            <th>Start Date</th>
+            <th>Seats</th>
+            <th>Vehicle Type</th>
+            <th>Price</th>
+          </tr>
+        </thead>
         <tbody>
           <tr *ngFor="let ride of rides">
             <td>
-              From {{ride.startsFrom}} to {{ride.endTo}} ride by <a href="#">{{ride.owner}}</a>
+              {{ride.startsFrom}}
             </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>{{ride.endTo}}</td>
+            <td>{{ride.owner}}</td>
             <td>
-              {{ride.startDate}}
+              {{ride.startDate}} {{ride.startTime}}
             </td>
             <td>
               {{ride.seats}}
             </td>
+            <td>{{ride.vehicleType}}</td>
+            <td>{{ride.price}}</td>
           </tr>
         </tbody>
       </table>

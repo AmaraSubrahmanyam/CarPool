@@ -6,5 +6,7 @@ export class Ride {
         public startDate = '',
         public startTime = '',
         public owner = '',
-        public seats?: number) { }
+        public seats?: number,
+        public vehicleType = '',
+        public price = '') { }
 }

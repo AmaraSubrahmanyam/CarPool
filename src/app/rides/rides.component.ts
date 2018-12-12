@@ -15,6 +15,7 @@ export class RidesComponent implements OnInit {
   constructor(private rideService: RideService) { }
 
   ngOnInit(): void {
+    this.rides = [];
     this.rideService.getRides().subscribe(
       (rides: Ride[]) => this.rides = rides,
       (err: any) => this.errorMessage = err.error

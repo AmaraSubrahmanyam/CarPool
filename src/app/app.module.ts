@@ -6,22 +6,23 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customers/customer.component';
 import { RidesComponent } from './rides/rides.component';
 import { AddRideComponent } from './rides/add-ride/add-ride.component';
-import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
-import {RidesData} from './rides/rides-data';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { SearchComponent } from './rides/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
     RidesComponent,
     AddRideComponent,
-    CustomerComponent
+    CustomerComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(RidesData),
-    AppRoutingModule
+    AppRoutingModule,
+    MDBBootstrapModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })

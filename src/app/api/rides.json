@@ -1,0 +1,136 @@
+{
+    "Ride": [
+        {
+            "id": 1,
+            "startsFrom": "Hitech City",
+            "endTo": "SR Nagar",
+            "startDate": "2018-12-07",
+            "startTime": "4:30",
+            "owner": "Subbu",
+            "seats": 1,
+            "vehicleType": "Hatchback",
+            "price": "30"
+        },
+        {
+            "id": 2,
+            "startsFrom": "Raidurgam",
+            "endTo": "Kukatpally",
+            "startDate": "2018-12-08",
+            "startTime": "5:30",
+            "owner": "Venu",
+            "seats": 2,
+            "vehicleType": "Hatchback",
+            "price": "30"
+        },
+        {
+            "id": 3,
+            "startsFrom": "DLF",
+            "endTo": "Lingam pally",
+            "startDate": "2018-12-07",
+            "startTime": "7:00",
+            "owner": "Pami",
+            "seats": 3,
+            "vehicleType": "Hatchback",
+            "price": "30"
+        },
+        {
+            "id": 4,
+            "startsFrom": "Wave Rock",
+            "endTo": "Mani Konda",
+            "startDate": "2018-12-06",
+            "startTime": "8:00",
+            "owner": "Suresh",
+            "seats": 4,
+            "vehicleType": "Hatchback",
+            "price": "30"
+        },
+        {
+            "id": 5,
+            "startsFrom": "Finacial District",
+            "endTo": "LB Nagar",
+            "startDate": "2018-12-13",
+            "startTime": "9:00",
+            "owner": "Hari",
+            "seats": 5,
+            "vehicleType": "Hatchback",
+            "price": "30"
+        },
+        {
+            "vehicleType": "Sedan",
+            "price": "40",
+            "startsFrom": "Hamburg",
+            "endTo": "Milano",
+            "startDate": "2018-12-19",
+            "startTime": "02:00",
+            "seats": "2",
+            "owner": "Naresh",
+            "id": 6
+        },
+        {
+            "vehicleType": "Sedan",
+            "price": "40",
+            "startsFrom": "Sofia",
+            "endTo": "Paris",
+            "startDate": "2018-12-19",
+            "startTime": "01:00",
+            "seats": "3",
+            "owner": "Naresh123 ",
+            "id": 7
+        },
+        {
+            "vehicleType": "Sedan",
+            "price": "40",
+            "startsFrom": "Paris",
+            "endTo": "Berlin",
+            "startDate": "2018-12-19",
+            "startTime": "01:00",
+            "seats": "2",
+            "owner": "SubbuAmara",
+            "id": 8
+        },
+        {
+            "vehicleType": "Sedan",
+            "price": "40",
+            "startsFrom": "Madrid",
+            "endTo": "Paris",
+            "startDate": "2018-12-14",
+            "startTime": "01:00",
+            "seats": "2",
+            "owner": "Suresh U",
+            "id": 9
+        },
+        {
+            "vehicleType": "Sedan",
+            "price": "40",
+            "startsFrom": "Milano",
+            "endTo": "Paris",
+            "startDate": "2018-12-20",
+            "startTime": "01:00",
+            "seats": "1",
+            "owner": "XYZ",
+            "id": 10
+        },
+        {
+            "vehicleType": "Sedan",
+            "price": "40",
+            "startsFrom": "Plovdiv",
+            "endTo": "Hamburg",
+            "startDate": "2018-12-20",
+            "startTime": "01:00",
+            "seats": "2",
+            "owner": "Kamini",
+            "id": 11
+        },
+        {
+            "vehicleType": "Sedan",
+            "price": "40",
+            "startsFrom": "Hamburg",
+            "endTo": "Plovdiv",
+            "startDate": "2018-12-07",
+            "startTime": "01:00",
+            "seats": "3",
+            "owner": "Suresh U 123",
+            "id": 12
+        }
+    ]
+}

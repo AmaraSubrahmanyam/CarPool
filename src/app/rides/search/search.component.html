@@ -1,0 +1,128 @@
+<div class="card">
+  <div class="card-header">
+    Search Ride
+  </div>
+
+  <div class="card-body">
+    <form class="form-inline"
+          novalidate
+          (ngSubmit)="searchRide(searchForm)"
+          #searchForm="ngForm">
+
+      <div class="form-group">
+        <label for="sourceId"
+               class="mb-2">Source : &nbsp;&nbsp;&nbsp;</label>
+        <select class="form-control"
+                id="sourceId"
+                required
+                [(ngModel)]="rideSearchForm.startsFrom"
+                name="startsFrom">
+          <option value=''></option>
+          <option value="Sofia">Sofia</option>
+          <option value="Plovdiv">Plovdiv</option>
+          <option value="Hamburg">Hamburg</option>
+          <option value="Milano">Milano</option>
+          <option value="Paris">Paris</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Berlin">Berlin</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;
+      </div>
+
+      <div class="form-group">
+        <label for="destinationId">Destination : &nbsp;&nbsp;&nbsp;</label>
+        <select class="form-control"
+                id="destinationId"
+                required
+                [(ngModel)]="rideSearchForm.endTo"
+                name="endTo">
+          <option value=''></option>
+          <option value="Sofia">Sofia</option>
+          <option value="Plovdiv">Plovdiv</option>
+          <option value="Hamburg">Hamburg</option>
+          <option value="Milano">Milano</option>
+          <option value="Paris">Paris</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Berlin">Berlin</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;
+      </div>
+
+      <div class="form-group">
+        <label for="startDateId">Start Date : &nbsp;&nbsp;&nbsp;</label>
+        <input class="form-control"
+               id="startDateId"
+               type="date"
+               placeholder="Start Date (required)"
+               required
+               [(ngModel)]="rideSearchForm.startDate"
+               name="startDate" />
+        &nbsp;&nbsp;&nbsp;
+      </div>
+
+      <div class="form-group">
+        <label for="seatsId">Seats : &nbsp;&nbsp;&nbsp;</label>
+        <select class="form-control"
+                id="seatsId"
+                required
+                [(ngModel)]="rideSearchForm.seats"
+                name="seats">
+          <option value=''></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;
+      </div>
+      &nbsp;&nbsp;&nbsp;
+      <button class="btn btn-primary mr-3"
+              type="submit"
+              style="width:80px">
+        Search
+      </button>
+    </form>
+  </div>
+</div>
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>
+<div class="card" *ngIf="rides?.length">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive-xl">
+      <table class="table"
+             *ngIf="rides?.length">
+        <thead>
+          <tr>
+            <th>From </th>
+            <th>To</th>
+            <th>Ride By</th>
+            <th>Start Date</th>
+            <th>Seats</th>
+            <th>Vehicle Type</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ride of rides">
+            <td>
+              {{ride.startsFrom}}
+            </td>
+            <td>{{ride.endTo}}</td>
+            <td>{{ride.owner}}</td>
+            <td>
+              {{ride.startDate}} {{ride.startTime}}
+            </td>
+            <td>
+              {{ride.seats}}
+            </td>
+            <td>{{ride.vehicleType}}</td>
+            <td>{{ride.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

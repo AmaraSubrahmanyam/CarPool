@@ -9,16 +9,39 @@ import { catchError, tap } from 'rxjs/operators';
     providedIn: 'root'
 })
 export class RideService {
-    private ridesUrl = 'api/rides';
+    private ridesUrl = 'http://localhost:3000/Ride';
     private rides: Ride[];
 
     constructor(private http: HttpClient) { }
 
     getRides(): Observable<Ride[]> {
-        if (this.rides) {
-            return of(this.rides);
-        }
         return this.http.get<Ride[]>(this.ridesUrl)
+            .pipe(
+                tap(data => this.rides = data),
+                catchError(this.handleError)
+            );
+    }
+
+    searchRides(ride: Ride): Observable<Ride[]> {
+        let conditions = [];
+        if (ride.startsFrom) {
+            conditions.push(`startsFrom=${ride.startsFrom}`);
+        }
+        if (ride.endTo) {
+            conditions.push(`endTo=${ride.endTo}`);
+        }
+        if (ride.startDate) {
+            conditions.push(`startDate=${ride.startDate}`);
+        }
+        if (ride.seats) {
+            conditions.push(`seats=${ride.seats}`);
+        }
+        let rideUrlForSearch = 'http://localhost:3000/Ride?';
+        for (let i = 0; i < conditions.length; i++) {
+            rideUrlForSearch = rideUrlForSearch + conditions[i] + '&';
+        }
+        console.log('rideUrlForSearch' + rideUrlForSearch);
+        return this.http.get<Ride[]>(rideUrlForSearch)
             .pipe(
                 tap(data => this.rides = data),
                 catchError(this.handleError)
@@ -30,7 +53,7 @@ export class RideService {
         ride.id = null;
         return this.http.post<Ride>(this.ridesUrl, ride, { headers: headers })
             .pipe(
-                tap(data => console.log('createProduct: ' + JSON.stringify(data))),
+                tap(data => console.log('createRide: ' + JSON.stringify(data))),
                 catchError(this.handleError)
             );
     }
